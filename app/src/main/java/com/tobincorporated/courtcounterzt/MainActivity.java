@@ -1,6 +1,9 @@
 package com.tobincorporated.courtcounterzt;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView poppleScoreView;
     private int poppleScore;
     private MediaPlayer bikeHorn;
+    AlertDialog alertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         poppleScore =0;
         poppleScoreView.setText("0");
         bikeHorn = MediaPlayer.create(this , R.raw.bikehorn);
+
+
+        alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+
 
     }
 
@@ -44,10 +52,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetClick(View view){
+
+        alertDialog.setTitle("Game Over!");
+        if( infinityScore>poppleScore) { alertDialog.setMessage("Team Infinity Wins!");}
+        if( infinityScore<poppleScore) { alertDialog.setMessage("Team Popples Wins!");}
+        if( infinityScore==poppleScore) { alertDialog.setMessage("It's a Tie!");}
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
+
         poppleScore=0;
         infinityScore=0;
         infinityScoreView.setText("" + infinityScore);
         poppleScoreView.setText("" + poppleScore);
 
+
     }
+
+
+
 }
