@@ -36,7 +36,6 @@
         android:gravity="center"
         android:paddingBottom="24dp"
         android:paddingTop="24dp"
-        android:text="0"
         android:textColor="#000000"
         android:textSize="60sp"
         android:textStyle="bold" />
@@ -46,5 +45,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="1 point"
-        android:onClick="InfinityScore"/>
+        android:onClick="infinityClick"/>
 </LinearLayout>
