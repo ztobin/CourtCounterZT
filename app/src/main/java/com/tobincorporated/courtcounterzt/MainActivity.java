@@ -7,7 +7,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private int poppleScore;
     private MediaPlayer bikeHorn;
     AlertDialog alertDialog;
+    private EditText team1View;
+    private EditText team2View;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +35,13 @@ public class MainActivity extends AppCompatActivity {
         poppleScore =0;
         poppleScoreView.setText("0");
         bikeHorn = MediaPlayer.create(this , R.raw.bikehorn);
-
+        team1View = (EditText) findViewById(R.id.team1View);
+        team2View = (EditText) findViewById(R.id.team2View);
+//
+//        team1View.setImeOptions(EditorInfo.IME_ACTION_DONE);
+//        team2View.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
         alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-
 
     }
 
@@ -66,8 +73,10 @@ public class MainActivity extends AppCompatActivity {
     public void resetClick(View view){
 
         alertDialog.setTitle("Game Over!");
-        if( infinityScore>poppleScore) { alertDialog.setMessage("Team Infinity Wins!");}
-        if( infinityScore<poppleScore) { alertDialog.setMessage("Team Popples Wins!");}
+        String team1Name = team1View.getText().toString();
+        String team2Name = team2View.getText().toString();
+        if( infinityScore>poppleScore) { alertDialog.setMessage(team1Name + " Wins!");}
+        if( infinityScore<poppleScore) { alertDialog.setMessage(team2Name + " Wins!");}
         if( infinityScore==poppleScore) { alertDialog.setMessage("It's a Tie!");}
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {

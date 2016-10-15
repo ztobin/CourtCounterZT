@@ -14,21 +14,23 @@
 
 
 <LinearLayout
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_weight="1">
-    <TextView
+    android:layout_weight="1"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/team1View"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#555555"
         android:gravity="center"
+        android:hint="Team 1"
+        android:imeOptions="actionDone"
+        android:inputType="text"
         android:paddingBottom="24dp"
         android:paddingTop="24dp"
-        android:text="Team Infinity"
         android:textColor="#4d0101"
-
-        android:textSize="40sp" />
+        android:textSize="40sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,23 +66,29 @@
         android:text="+1 point"/>
 
 </LinearLayout>
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#00ff00"/>
 
 <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#aaaaaa"
-            android:gravity="center"
-            android:paddingBottom="24dp"
-            android:paddingTop="24dp"
-            android:text="Team Popples"
-            android:textColor="#04014d"
-
-            android:textSize="40sp" />
+        android:layout_weight="1"
+        android:orientation="vertical">
+    <EditText
+        android:id="@+id/team2View"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#555555"
+        android:gravity="center"
+        android:hint="Team 2"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:paddingBottom="24dp"
+        android:paddingTop="24dp"
+        android:textColor="#4d0101"
+        android:textSize="40sp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -124,9 +132,9 @@
         android:id="@+id/resetButton1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="resetClick"
         android:layout_marginTop="16dp"
-        android:paddingTop="16dp"
+        android:onClick="resetClick"
         android:paddingBottom="16dp"
+        android:paddingTop="16dp"
         android:text="Game Over"/>
 </LinearLayout>
