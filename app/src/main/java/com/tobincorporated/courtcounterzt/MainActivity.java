@@ -38,18 +38,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void infinityClickMinus(View view){
+        infinityScore--;
+        scoreUpdate();
+    }
+    public void poppleClickMinus(View view){
+        poppleScore--;
+        scoreUpdate();
+    }
     public void infinityClick(View view){
         infinityScore++;
-        bikeHorn = MediaPlayer.create(this , R.raw.bikehorn);
-        bikeHorn.start();
-        infinityScoreView.setText("" + infinityScore);
+        scoreUpdate();
     }
     public void poppleClick(View view){
         poppleScore++;
+        scoreUpdate();
+    }
+
+    private void scoreUpdate(){
         bikeHorn = MediaPlayer.create(this , R.raw.bikehorn);
         bikeHorn.start();
+        infinityScoreView.setText("" + infinityScore);
         poppleScoreView.setText("" + poppleScore);
     }
+
 
     public void resetClick(View view){
 

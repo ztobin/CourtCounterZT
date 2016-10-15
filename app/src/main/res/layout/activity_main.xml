@@ -50,13 +50,19 @@
         android:textColor="#000000"
         android:textSize="60sp"
         android:textStyle="bold" />
-
+    <Button
+        android:id="@+id/infinityButtonMinus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="infinityClickMinus"
+        android:text="-1 point"/>
     <Button
         android:id="@+id/infinityButton1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="infinityClick"
         android:text="+1 point"/>
+
 </LinearLayout>
 
 <LinearLayout
@@ -96,7 +102,12 @@
             android:textColor="#000000"
             android:textSize="60sp"
             android:textStyle="bold" />
-
+    <Button
+        android:id="@+id/poppleButtonMinus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="poppleClickMinus"
+        android:text="-1 point"/>
         <Button
             android:id="@+id/poppleButton1"
             android:layout_width="match_parent"
