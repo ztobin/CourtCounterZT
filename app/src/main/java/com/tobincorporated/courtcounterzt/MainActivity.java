@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 //        team2View.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
         alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        bikeHorn = MediaPlayer.create(this , R.raw.bikehorn);
 
     }
 
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void scoreUpdate(){
-        bikeHorn = MediaPlayer.create(this , R.raw.bikehorn);
+        bikeHorn.seekTo(0);
         bikeHorn.start();
         infinityScoreView.setText("" + infinityScore);
         poppleScoreView.setText("" + poppleScore);
